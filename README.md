@@ -1,1 +1,1 @@
-# synthesisfestival
+# synthesis festival
