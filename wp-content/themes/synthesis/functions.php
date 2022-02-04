@@ -143,3 +143,23 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+
+function isHomePage() {
+	return (is_page('Home') || is_page(8) || is_page(15));
+}
+
+// enqueue base stylesheet
+function enqueue_assets() {
+    wp_enqueue_style('stylesheet', get_template_directory_uri() . '/voyage-webfont.css');
+    wp_register_script('app', get_template_directory_uri() . '/scripts/app.js', array(), '1.0', TRUE);
+    if (isHomePage()) wp_enqueue_script('app');
+    if (!isHomePage()) wp_enqueue_style('stylesheet-page', get_template_directory_uri() . '/style-pages.css');
+}
+
+add_action( 'wp_enqueue_scripts', 'enqueue_assets' );
+
+function register_footer_menu() {
+    register_nav_menu('footer-navigation', __('Footer Navigation'));
+}
+
+add_action('init', 'register_footer_menu');

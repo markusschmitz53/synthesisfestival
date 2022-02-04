@@ -1,5 +1,14 @@
 <?php get_header(); ?>
 <header>
+	<div class="artwork">
+		<div class="logo-and-corners">
+			<img alt="" class="corner corner-left" src="<?php echo get_bloginfo('template_url') ?>/images/corner-left.png"/>
+			<img alt="Logo Synthesis Festival" class="synthesis-logo" src="<?php echo get_bloginfo('template_url') ?>/images/synthesis-logo.png"/>
+			<img alt="" class="corner corner-right" src="<?php echo get_bloginfo('template_url') ?>/images/corner-right.png"/>
+		</div>
+		<img class="synthesis-artwork" alt="Artwork Synthesis Festival"
+			 src="<?php echo get_bloginfo('template_url') ?>/images/synthesis-artwork-start.png"/>
+	</div>
 	<nav id="menu" itemscope itemtype="https://schema.org/SiteNavigationElement">
 		<img alt="Logo Synthesis Festival" class="synthesis-header-logo" src="<?php echo get_bloginfo('template_url') ?>/images/synthesis-logo-header.png"/>
         <?php wp_nav_menu(array('theme_location' => 'main-menu')) ?>
