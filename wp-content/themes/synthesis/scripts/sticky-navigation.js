@@ -1,16 +1,19 @@
-let initialPosition = 0;
+let initialPosition = 0, width = 0, height = 0;
 
 function resetScrollAndSetInitialNaviPosition() {
 	window.scrollTo(0,0);
-    initialPosition = jQuery('#menu').offset().top;
+	initialPosition = jQuery('#menu').offset().top;
 }
 
-jQuery(function() {
+jQuery(function () {
+	width = jQuery(window).width()
+	height = jQuery(window).height()
 	resetScrollAndSetInitialNaviPosition()
 });
 
 jQuery( window ).resize(function() {
- 	resetScrollAndSetInitialNaviPosition()
+	if(jQuery(window).width() !== width || jQuery(window).height() !== height)
+ 		resetScrollAndSetInitialNaviPosition()
 });
 
 jQuery(window).scroll(function() {
