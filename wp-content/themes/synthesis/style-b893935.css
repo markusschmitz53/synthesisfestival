@@ -386,11 +386,13 @@ footer .synthesis-footer-logo {
 
     .language-button,
     .menu-main-container,
+    .menu-main-en-container,
     .footer-container {
         display: none;
     }
 
     #mobile-menu .menu-main-container,
+    #mobile-menu .menu-main-en-container,
     #mobile-menu .language-button {
         display: block;
     }
