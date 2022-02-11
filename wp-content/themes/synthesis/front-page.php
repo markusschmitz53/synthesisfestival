@@ -14,7 +14,7 @@
 		<a href="<?php echo get_bloginfo('wpurl') ?>">
 			<img class="synthesis-artwork" alt="Artwork Synthesis Festival"
 				 src="<?php echo get_bloginfo('template_url') ?>/images/synthesis-artwork-start-3000.png"
-				 srcset="<?php echo get_bloginfo('template_url') ?>/images/synthesis-artwork-start-1000.png 1000w,
+				 srcset="<?php echo get_bloginfo('template_url') ?>/images/synthesis-artwork-start-mobile.png 1000w,
 			 <?php echo get_bloginfo('template_url') ?>/images/synthesis-artwork-start-1400.png 1400w,
 			 <?php echo get_bloginfo('template_url') ?>/images/synthesis-artwork-start-3000.png 1500w"/>
 		</a>
