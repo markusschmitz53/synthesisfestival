@@ -4,7 +4,7 @@
 	<nav id="menu" itemscope itemtype="https://schema.org/SiteNavigationElement">
 		<a class="synthesis-header-logo" href="<?php echo get_bloginfo('wpurl') ?>">
 			<img alt="Logo Synthesis Festival"
-				 src="<?php echo get_bloginfo('template_url') ?>/images/synthesis-logo-header.png"/>
+				 src="<?php echo get_bloginfo('template_url') ?>/images/synthesis-logo-header-400.png"/>
 		</a>
 		<button id="toggle-mobile-menu" href="#"></button>
         <?php wp_nav_menu(array('theme_location' => 'main-menu')) ?>
@@ -20,7 +20,7 @@
 	<nav id="mobile-menu" itemscope itemtype="https://schema.org/SiteNavigationElement">
 		<a class="synthesis-header-logo" href="<?php echo get_bloginfo('wpurl') ?>">
 			<img alt="Logo Synthesis Festival"
-				 src="<?php echo get_bloginfo('template_url') ?>/images/synthesis-logo-header.png"/>
+				 src="<?php echo get_bloginfo('template_url') ?>/images/synthesis-logo-header-400.png"/>
 		</a>
         <?php wp_nav_menu(array('theme_location' => 'main-menu')) ?>
         <?php wp_nav_menu(array('theme_location' => 'footer-navigation')); ?>
@@ -37,7 +37,6 @@
 <main id="content">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 			<div class="entry-content">
                 <?php if (has_post_thumbnail()) {
                     the_post_thumbnail('full', array('itemprop' => 'image'));

@@ -3,7 +3,7 @@
 	<nav id="menu" itemscope itemtype="https://schema.org/SiteNavigationElement">
 		<a class="synthesis-header-logo" href="<?php echo get_bloginfo('wpurl') ?>">
 			<img alt="Logo Synthesis Festival" class="synthesis-header-logo"
-				 src="<?php echo get_bloginfo('template_url') ?>/images/synthesis-logo-header.png"/>
+				 src="<?php echo get_bloginfo('template_url') ?>/images/synthesis-logo-header-400.png"/>
 		</a>
         <?php wp_nav_menu(array('theme_location' => 'main-menu')) ?>
 		<div class="wp-block-button language-button">

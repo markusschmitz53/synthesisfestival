@@ -183,8 +183,8 @@ function enqueue_assets() {
     wp_register_script('sticky-navigation', get_template_directory_uri() . '/scripts/sticky-navigation.js', array(), '1.0', TRUE);
     wp_enqueue_script('mobile-navigation');
     if (isHomePage()) wp_enqueue_script('sticky-navigation');
-    wp_enqueue_style('stylesheet', get_template_directory_uri() . '/style-e892946.css');
-    if (!isHomePage()) wp_enqueue_style('stylesheet-page', get_template_directory_uri() . '/style-pages-b893935.css');
+    wp_enqueue_style('stylesheet', get_template_directory_uri() . '/custom-styles.css', array(), '150922');
+    if (!isHomePage()) wp_enqueue_style('stylesheet-page', get_template_directory_uri() . '/style-pages.css', array(), '150922');
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_assets');
