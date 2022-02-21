@@ -183,6 +183,8 @@ function enqueue_assets() {
     wp_register_script('sticky-navigation', get_template_directory_uri() . '/scripts/sticky-navigation.js', array(), '1.0', TRUE);
     wp_enqueue_script('mobile-navigation');
     if (isHomePage()) wp_enqueue_script('sticky-navigation');
+	wp_enqueue_style('google-font-ibm-plex', 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;500;600&display=swap', array(), '1.0');
+    wp_enqueue_style('font-voyage', get_template_directory_uri() . '/voyage-webfont.css', array(), '1.0');
     wp_enqueue_style('stylesheet', get_template_directory_uri() . '/custom-styles.css', array(), '150922');
     if (!isHomePage()) wp_enqueue_style('stylesheet-page', get_template_directory_uri() . '/style-pages.css', array(), '150922');
 }
@@ -194,3 +196,43 @@ function register_footer_menu() {
 }
 
 add_action('init', 'register_footer_menu');
+
+add_filter(
+    'wp_resource_hints',
+    function( $urls, $relation_type ) {
+        if ( 'dns-prefetch' === $relation_type ) {
+            $urls = [];
+        }
+
+        if ( 'preconnect' === $relation_type ) {
+            $urls = wp_dependencies_unique_hosts();
+        }
+
+        return $urls;
+    },
+    0,
+    2
+);
+
+add_action('template_redirect', 'disable_author_page');
+
+function disable_author_page() {
+    global $wp_query;
+
+    if ( is_author() ) {
+        // Redirect to homepage, set status to 301 permenant redirect.
+        // Function defaults to 302 temporary redirect.
+        wp_redirect(get_option('home'), 301);
+        exit;
+    }
+}
+
+function remove_author_category_pages_from_sitemap($provider, $name)
+{
+    if ('users' === $name) {
+        return false;
+    }
+    return $provider;
+}
+
+add_filter('wp_sitemaps_add_provider', 'remove_author_category_pages_from_sitemap', 10, 2);
